@@ -1,0 +1,205 @@
+/* Custom styles for ChromaDB Viewer */
+
+/* Status Indicator */
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    transition: all 0.3s ease;
+}
+
+.status-indicator.connected {
+    background-color: #198754;
+    box-shadow: 0 0 10px rgba(25, 135, 84, 0.5);
+}
+
+.status-indicator.connecting {
+    background-color: #ffc107;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+/* Message Styles */
+#connectionMessage {
+    font-size: 0.9rem;
+}
+
+/* Data Display */
+.document-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+}
+
+/* Pagination Styles */
+#pageNumbers {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+#pageNumbers li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.document-id {
+    font-weight: 600;
+    color: #495057;
+    background-color: #e9ecef;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.document-section {
+    margin-bottom: 1rem;
+}
+
+.document-section h6 {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+.document-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.metadata-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    font-family: monospace;
+    font-size: 0.875rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.embedding-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    font-family: monospace;
+    font-size: 0.75rem;
+    overflow-x: auto;
+}
+
+.embedding-hidden {
+    display: none;
+}
+
+/* Loading Styles */
+#loadingIndicator {
+    transition: opacity 0.3s ease;
+}
+
+/* Error Message */
+#errorMessage {
+    transition: all 0.3s ease;
+}
+
+/* Data Count */
+#dataCount {
+    font-weight: 600;
+    color: #6c757d;
+}
+
+/* Card Styles */
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Styles */
+.btn {
+    transition: all 0.2s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .document-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .card-header h5 {
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animation for data loading */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
